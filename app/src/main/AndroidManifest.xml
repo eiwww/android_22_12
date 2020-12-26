@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".showDataAll"/>
+        <activity android:name=".showdata_Info"/>
     </application>
 
 </manifest>

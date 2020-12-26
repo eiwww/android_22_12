@@ -2,6 +2,7 @@ package com.sd.lap_7_12;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText txtid,txtname,txtsur,txtage,txttel,txtsearch;
-    Button btnsearch,btnsave,btnedit,btndel;
+    Button btnsearch,btnsave,btnedit,btndel,btnclear,btnsh;
     SQLiteDatabase db;
     DataBaseHelper mydb = new DataBaseHelper(this);
     @Override
@@ -48,28 +49,47 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-//        btnedit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                long r = mydb.EditData(txtid.getText().toString(), txtname.getText().toString(), txtsur.getText().toString(), txtage.getText().toString(), txttel.getText().toString());
-//                if(r>0){
-//                    Toast.makeText(getApplicationContext(), "Edit Complete", Toast.LENGTH_LONG).show();
-//                }else{
-//                    Toast.makeText(getApplicationContext(), "Edit Fail", Toast.LENGTH_LONG).show();
-//                }
-//            }
-//        });
-//        btndel.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                long r = mydb.DeleteData(txtid.getText().toString());
-//                if(r>0){
-//                    Toast.makeText(getApplicationContext(), "Delete Complete", Toast.LENGTH_LONG).show();
-//                }else{
-//                    Toast.makeText(getApplicationContext(), "Delete Fail", Toast.LENGTH_LONG).show();
-//                }
-//            }
-//        });
+        btnedit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                long r = mydb.EditData(txtid.getText().toString(), txtname.getText().toString(), txtsur.getText().toString(), txtage.getText().toString(), txttel.getText().toString());
+                if(r>0){
+                    Toast.makeText(getApplicationContext(), "Edit Complete", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(getApplicationContext(), "Edit Fail", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        btndel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                long r = mydb.DeleteData(txtid.getText().toString());
+                if(r>0){
+                    Toast.makeText(getApplicationContext(), "Delete Complete", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(getApplicationContext(), "Delete Fail", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        btnclear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                txtsearch.setText("");
+                txtid.setText("");
+                txtname.setText("");
+                txtsur.setText("");
+                txtage.setText("");
+                txttel.setText("");
+            }
+        });
+        btnsh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,showDataAll.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void initial() {
@@ -83,5 +103,7 @@ public class MainActivity extends AppCompatActivity {
         btnsearch = findViewById(R.id.btnse);
         btnedit= findViewById(R.id.btned);
         btndel = findViewById(R.id.btndel);
+        btnclear = findViewById(R.id.btncl);
+        btnsh = findViewById(R.id.btnsh);
     }
 }

@@ -1,30 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:layout_margin="30dp"
-    android:orientation="vertical"
+    android:layout_margin="20dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/txtsearch"
-            android:layout_weight="2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:text="Search"
-            android:id="@+id/btnse"
-            android:layout_weight="4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
         android:layout_marginTop="30dp"
         android:orientation="horizontal"
@@ -36,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/txtid"
+            android:id="@+id/txtshid"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -52,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/txtnm"
+            android:id="@+id/txtshnm"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -68,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/txtsn"
+            android:id="@+id/txtshsn"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -84,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/txtage"
+            android:id="@+id/txtshage"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -100,56 +79,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/txtph"
+            android:id="@+id/txtshph"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-    <LinearLayout
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:text="Insert"
-            android:id="@+id/btncf"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:text="Edit"
-            android:id="@+id/btned"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:layout_marginLeft="5dp"
-            android:layout_weight="1"
-            android:text="Delete"
-            android:id="@+id/btndel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/btnsh"
-            android:text="Show Data"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/btncl"
-            android:text="Clear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-
 </LinearLayout>

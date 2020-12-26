@@ -26,6 +26,18 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
 
     }
+
+    public Cursor selectAllData(){
+        try {
+            SQLiteDatabase db = this.getReadableDatabase();
+            String sql = "select * from employee";
+            Cursor cur = db.rawQuery(sql, null);
+            return cur;
+        }catch (Exception ex){
+            return null;
+        }
+    }
+
     public long insertData(String name,String sur,String age,String tel){
         try {
             SQLiteDatabase db = this.getWritableDatabase();
@@ -70,37 +82,37 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             return null;
         }
     }
-//    public long EditData(String id,String name,String sur,String age,String tel){
-//        try {
-//            SQLiteDatabase db = this.getWritableDatabase();
-//            String sql="update employee set empname=?,empsurname=?,age=?,tel=? where id=?";
-//            SQLiteStatement stm = db.compileStatement(sql);
-//            stm.bindString(5, id);
-//            stm.bindString(1,name);
-//            stm.bindString(2, sur);
-//            stm.bindString(3, age);
-//            stm.bindString(4, tel);
-//            long r = stm.executeInsert();
-//            db.close();
-//            return r;
-//        }catch (Exception ex){
-//            return -1;
-//        }
-//
-//    }
-//    public long DeleteData(String id){
-//        try {
-//            SQLiteDatabase db = this.getWritableDatabase();
-//            String sql="delete from employee  where id=?";
-//            SQLiteStatement stm = db.compileStatement(sql);
-//            stm.bindString(1, id);
-//            long r = stm.executeInsert();
-//            db.close();
-//            return r;
-//        }catch (Exception ex){
-//            return -1;
-//        }
-//
-//    }
+    public long EditData(String id,String name,String sur,String age,String tel){
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            String sql="update employee set empname=?,empsurname=?,age=?,tel=? where id=?";
+            SQLiteStatement stm = db.compileStatement(sql);
+            stm.bindString(5, id);
+            stm.bindString(1,name);
+            stm.bindString(2, sur);
+            stm.bindString(3, age);
+            stm.bindString(4, tel);
+            long r = stm.executeUpdateDelete();
+            db.close();
+            return r;
+        }catch (Exception ex){
+            return -1;
+        }
+
+    }
+    public long DeleteData(String id){
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            String sql="delete from employee  where id=?";
+            SQLiteStatement stm = db.compileStatement(sql);
+            stm.bindString(1, id);
+            long r = stm.executeUpdateDelete();
+            db.close();
+            return r;
+        }catch (Exception ex){
+            return -1;
+        }
+
+    }
 
 }
